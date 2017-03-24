@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#hidebooks").hide();
+		$("#postbook").click(function(){
+			$("#hidebooks").show();
+		});
+		$("#postbook").dblclick(function(){
+			$("#hidebooks").hide();
+		});
+	});
+	</script>
+</head>
+<body>
+<a href= "/getbooks">Retrieve Books(GET)</a> |
+<a id="postbook">Enter new Book(Post)</a> 
+<div class="row"></div>
+<div class="container" id="hidebooks">
+<form action="/postbooks" method="POST">
+  <div class="form-group">
+    <label for="email">Book Name</label>
+    <input type="text" class="form-control" style="height:35px;width:220px" name="name">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Author</label>
+    <input type="text" class="form-control" style="height:35px;width:220px" name="author">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Price</label>
+    <input type="text" class="form-control" style="height:35px;width:220px" name="price">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</body>
+</html>
